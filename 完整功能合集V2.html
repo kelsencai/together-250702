@@ -3,840 +3,394 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>完整功能合集 - 时间管理、投资分析、智慧阅读、经济预测</title>
+    <title>企业内部控制、风险与审计体系</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
+       
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: 'Microsoft YaHei', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e7f1 100%);
             min-height: 100vh;
-            color: #333;
         }
-
-        .header {
-            background: rgba(255, 255, 255, 0.95);
+       
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
             padding: 20px;
-            text-align: center;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
-
-        .header h1 {
-            font-size: 2.5rem;
-            color: #333;
-            margin-bottom: 10px;
-        }
-
-        .header p {
-            color: #666;
-            font-size: 1.1rem;
-        }
-
-        .nav {
-            background: rgba(255, 255, 255, 0.9);
+       
+        .contact-info {
+            background-color: #ffe0b2; /* 浅橙色背景 */
+            color: #e65100; /* 深橙色文字 */
             padding: 15px;
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
-            overflow-x: auto;
-        }
-
-        .nav button {
-            padding: 10px 15px;
-            border: none;
-            border-radius: 25px;
-            background: #667eea;
-            color: white;
-            cursor: pointer;
-            font-size: 0.9rem;
-            transition: all 0.3s;
-            white-space: nowrap;
-        }
-
-        .nav button:hover {
-            background: #5a6fd8;
-            transform: translateY(-2px);
-        }
-
-        .nav button.active {
-            background: #4c63d2;
-            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
-        }
-
-        .main-content {
-            max-width: 1400px;
-            margin: 20px auto;
-            padding: 0 20px;
-        }
-
-        .section {
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 15px;
-            padding: 30px;
-            margin-bottom: 30px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-            backdrop-filter: blur(10px);
-        }
-
-        .section h2 {
-            color: #333;
-            margin-bottom: 20px;
-            font-size: 1.8rem;
-            border-bottom: 3px solid #667eea;
-            padding-bottom: 10px;
-        }
-
-        /* 时间管理样式 */
-        .login {
-            margin-bottom: 20px;
             text-align: center;
-        }
-
-        .login input {
-            padding: 12px;
-            border: 2px solid #ddd;
+            font-size: 1.2em;
+            font-weight: bold;
             border-radius: 8px;
-            font-size: 1rem;
-            margin-right: 10px;
-            width: 200px;
-        }
-
-        .login button {
-            padding: 12px 24px;
-            border: none;
-            border-radius: 8px;
-            background: #667eea;
-            color: white;
-            font-size: 1rem;
-            cursor: pointer;
-        }
-
-        .task-input {
-            display: flex;
-            gap: 10px;
             margin-bottom: 20px;
-            flex-wrap: wrap;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border: 1px solid #ffcc80;
         }
-
-        .task-input input, .task-input select {
-            padding: 12px;
-            border: 2px solid #ddd;
-            border-radius: 8px;
-            font-size: 1rem;
-        }
-
-        .task-input input {
-            flex: 1;
-            min-width: 200px;
-        }
-
-        .task-input button {
-            padding: 12px 24px;
-            border: none;
-            border-radius: 8px;
-            background: #667eea;
+       
+        header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
             color: white;
-            font-size: 1rem;
-            cursor: pointer;
-        }
-
-        .task-list {
-            list-style: none;
-        }
-
-        .task-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px;
-            background: #f8f9fa;
+            text-align: center;
+            padding: 40px 0;
+            margin-bottom: 40px;
             border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+       
+        header h1 {
+            font-size: 2.5em;
             margin-bottom: 10px;
-            border-left: 4px solid #667eea;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+       
+        header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+       
+        /* 移除 guides-container 样式，因为它现在只有三个卡片，但我们保留它以防未来扩展 */
+        .guides-container {
+            display: flex;
+            justify-content: space-around;
+            gap: 30px;
+            margin-bottom: 40px;
+            /* 隐藏所有卡片，因为它们的内容被移动到内控模块中了 */
+            display: none; 
+        }
+       
+        .module-section {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
 
-        .task-item.completed {
-            opacity: 0.6;
-            text-decoration: line-through;
+        .module-section h2 {
+            color: #1e3c72;
+            margin-bottom: 20px;
+            font-size: 2em;
+            text-align: center;
         }
 
-        .task-item button {
-            background: #ff4757;
-            border: none;
+        .sub-module {
+            margin-top: 30px;
+            border-top: 1px dashed #ccc;
+            padding-top: 20px;
+        }
+
+        .sub-module h3 {
+            color: #333;
+            margin-bottom: 15px;
+            cursor: pointer;
+            position: relative;
+            font-size: 1.4em;
+            padding: 10px;
+            background-color: #f8f8f8;
             border-radius: 5px;
-            color: white;
-            padding: 8px 16px;
-            cursor: pointer;
         }
 
-        .filter {
-            margin-bottom: 20px;
-            text-align: center;
+        .sub-module h3::after {
+            content: '▼';
+            position: absolute;
+            right: 15px;
+            transition: transform 0.3s;
         }
 
-        .filter button {
+        .sub-module h3.active::after {
+            transform: rotate(180deg);
+        }
+
+        .sub-content {
+            display: none;
             padding: 10px 20px;
-            border: none;
-            border-radius: 8px;
-            background: #667eea;
-            color: white;
-            font-size: 1rem;
-            cursor: pointer;
-            margin: 0 5px;
+            background-color: #fff;
+            border-left: 3px solid #1e3c72;
         }
 
-        /* 投资工具样式 */
-        .investment-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            margin-bottom: 20px;
+        .link-list li {
+            list-style: none;
+            margin-bottom: 10px;
         }
-
-        .investment-card {
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
-            padding: 25px;
-            border-radius: 15px;
-            text-align: center;
-            transition: transform 0.3s;
-            cursor: pointer;
+        
+        .link-list a {
+            color: #1e3c72;
             text-decoration: none;
-            display: block;
-        }
-
-        .investment-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .investment-card h3 {
-            margin-bottom: 10px;
-            font-size: 1.3rem;
-        }
-
-        .fear-greed {
-            background: linear-gradient(135deg, #ff6b6b, #ee5a24);
-        }
-
-        .percentile {
-            background: linear-gradient(135deg, #4ecdc4, #44a08d);
-        }
-
-        .ah-premium {
-            background: linear-gradient(135deg, #667eea, #764ba2);
-        }
-
-        .sofr-analysis {
-            background: linear-gradient(135deg, #f093fb, #f5576c);
-        }
-
-        /* 价值投资样式 */
-        .value-investment {
-            background: linear-gradient(135deg, #4facfe, #00f2fe);
-            color: white;
-            padding: 30px;
-            border-radius: 15px;
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .value-investment h3 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-        }
-
-        .value-features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .value-feature {
-            background: rgba(255, 255, 255, 0.2);
-            padding: 15px;
-            border-radius: 10px;
-        }
-
-        /* SOFR分析样式 */
-        .sofr-form {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin-bottom: 20px;
-        }
-
-        .input-group {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .input-group label {
-            margin-bottom: 8px;
-            font-weight: 500;
-            color: #333;
-        }
-
-        .input-group input {
-            padding: 12px;
-            border: 2px solid #ddd;
-            border-radius: 8px;
-            font-size: 1rem;
-        }
-
-        .analyze-btn {
-            padding: 15px 30px;
-            background: #667eea;
-            color: white;
-            border: none;
-            border-radius: 8px;
-            font-size: 1.1rem;
-            cursor: pointer;
-            width: 100%;
-        }
-
-        .result {
-            margin-top: 20px;
-            padding: 20px;
-            background: #f8f9fa;
-            border-radius: 10px;
-            border-left: 4px solid #667eea;
-        }
-
-        .risk-indicator {
-            display: inline-block;
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            margin-right: 8px;
-        }
-
-        .risk-low { background-color: #34c759; }
-        .risk-medium { background-color: #ffcc00; }
-        .risk-high { background-color: #ff3b30; }
-
-        /* 美联储SEP样式 */
-        .sep-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            margin-bottom: 20px;
-        }
-
-        .sep-card {
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
-            padding: 25px;
-            border-radius: 15px;
-            text-align: center;
-            transition: transform 0.3s;
-        }
-
-        .sep-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .sep-card h3 {
-            margin-bottom: 10px;
-            font-size: 1.3rem;
-        }
-
-        .fed-logo {
-            width: 60px;
-            height: 60px;
-            background: #1e3a8a;
-            border-radius: 50%;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 15px;
-            color: white;
-            font-size: 1.5rem;
             font-weight: bold;
         }
 
-        /* 豆豆三部曲样式 */
-        .book-section {
-            margin-bottom: 30px;
+        .link-list a:hover {
+            text-decoration: underline;
+        }
+        
+        .list-with-descriptions li {
+            margin-bottom: 20px;
+            padding: 10px;
+            border-left: 3px solid #4CAF50;
+            background-color: #f7fff7;
         }
 
-        .book-section h3 {
-            color: #667eea;
-            margin-bottom: 15px;
-            font-size: 1.4rem;
+        .list-with-descriptions h4 {
+            color: #2a5298;
+            margin-bottom: 5px;
+            font-size: 1.1em;
         }
 
-        .quote {
-            margin: 15px 0;
-            padding: 15px 20px;
-            background: #f8f9fa;
-            border-left: 5px solid #667eea;
-            font-style: italic;
-            color: #555;
-            border-radius: 0 8px 8px 0;
+        /* 表格样式 */
+        .control-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
         }
 
-        .tips {
-            background: #e3f2fd;
+        .control-table th, .control-table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+            font-size: 0.9em;
+        }
+
+        .control-table th {
+            background-color: #2a5298;
+            color: white;
+            font-weight: 600;
+        }
+
+        .control-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .case-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .case-list li {
+            background-color: #fce4ec; /* Light Pink for corruption */
+            border-left: 5px solid #E91E63;
             padding: 15px;
-            border-radius: 8px;
-            margin-top: 15px;
+            margin-bottom: 15px;
+            border-radius: 5px;
         }
-
-        .tips h4 {
-            color: #1976d2;
-            margin-bottom: 10px;
-        }
-
-        .tips ul {
-            margin-left: 20px;
-        }
-
-        .tips li {
+        
+        .case-list h4 {
+            color: #C2185B;
             margin-bottom: 5px;
         }
 
-        /* 响应式设计 */
-        @media (max-width: 768px) {
-            .nav {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .task-input {
-                flex-direction: column;
-            }
-            
-            .sofr-form {
-                grid-template-columns: 1fr;
-            }
-            
-            .investment-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .sep-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .hidden {
-            display: none;
+        .case-list a {
+            color: #E91E63;
+            font-weight: 600;
         }
     </style>
 </head>
 <body>
-    <div class="header">
-        <h1>完整功能合集</h1>
-        <p>时间管理 · 投资分析 · 智慧阅读 · 经济预测</p>
-    </div>
-
-    <div class="nav">
-        <button onclick="showSection('time')" class="active">⏰ 时间管理</button>
-        <button onclick="showSection('investment')">📊 投资工具</button>
-        <button onclick="showSection('value')">💰 价值投资</button>
-        <button onclick="showSection('sofr')">💵 SOFR分析</button>
-        <button onclick="showSection('sep')">🏦 美联储SEP</button>
-        <button onclick="showSection('books')">📚 豆豆三部曲</button>
-    </div>
-
-    <div class="main-content">
-        <!-- 时间管理部分 -->
-        <div id="time-section" class="section">
-            <h2>⏰ 时间管理</h2>
-            <div class="login">
-                <input type="text" id="usernameInput" placeholder="输入用户名">
-                <button onclick="login()">登录</button>
-            </div>
-            <div id="taskManager" style="display: none;">
-                <div class="task-input">
-                    <input type="text" id="taskInput" placeholder="输入新任务">
-                    <select id="difficultyInput">
-                        <option value="easy">简单</option>
-                        <option value="medium">中等</option>
-                        <option value="hard">困难</option>
-                    </select>
-                    <button onclick="addTask()">添加任务</button>
-                </div>
-                <div class="filter">
-                    <button onclick="filterTasks('starred')">显示星标任务</button>
-                    <button onclick="filterTasks('uncompleted')">显示未完成任务</button>
-                    <button onclick="filterTasks('all')">显示所有任务</button>
-                </div>
-                <div id="taskLists"></div>
-            </div>
+    <div class="container">
+        <div class="contact-info">
+            感兴趣请加微信交流：duducser2
         </div>
 
-        <!-- 投资工具部分 -->
-        <div id="investment-section" class="section hidden">
-            <h2>📊 投资工具导航</h2>
-            <div class="investment-grid">
-                <a href="https://funddb.cn/tool/fear" target="_blank" class="investment-card fear-greed">
-                    <h3>📈 A股恐惧贪婪指数</h3>
-                    <p>实时监控市场情绪，把握投资时机</p>
-                </a>
-                <a href="https://funddb.cn/site/fed" target="_blank" class="investment-card percentile">
-                    <h3>📊 股债百分位</h3>
-                    <p>25%以下必须卖，75%以上大胆买</p>
-                </a>
-                <a href="https://stockpage.10jqka.com.cn/HSAHP/" target="_blank" class="investment-card ah-premium">
-                    <h3>💹 AH股溢价指数</h3>
-                    <p>恒生AH股溢价指数实时监控</p>
-                </a>
-                <div class="investment-card sofr-analysis" onclick="showSection('sofr')">
-                    <h3>💰 SOFR分析工具</h3>
-                    <p>担保隔夜融资利率分析</p>
+        <header>
+            <h1>企业内部控制、风险与审计体系</h1>
+            <p>构建合规运营、高效治理的基石</p>
+        </header>
+       
+        <div class="guides-container"></div>
+
+        <div class="module-section" id="internal-control">
+            <h2>内控模块：法规、指引与实操（以原材料采购为例）</h2>
+            <div class="sub-module">
+                <h3 onclick="toggleSubContent(this)">法规、指引与体系核心</h3>
+                <div class="sub-content">
+                    <h4>法规体系核心：</h4>
+                    <p>中国企业内部控制体系以“一部基本规范、三个配套指引”为核心，并与相关法律法规共同构建：</p>
+                    <ul class="link-list">
+                        <li>
+                            《企业内部控制基本规范》<br>
+                            <a href="https://czj.sh.gov.cn/zys_8908/zcfg_8983/zcfb_8985/hj_9035/cwhjjbzdgf/20180615/0017-177776.html" target="_blank">财政部证监会等关于印发《企业内部控制基本规范》的通知 (官方链接)</a>
+                        </li>
+                        <li>
+                            《企业内部控制配套指引》（包含应用、评价、审计指引）<br>
+                            <a href="https://www.faxin.cn/lib/zyfl/zyflcontent.aspx?gid=A49547" target="_blank">《企业内部控制配套指引》全文（用户指定链接）</a>
+                        </li>
+                    </ul>
+
+                    <h4>内控三大指引说明：</h4>
+                    <ul class="list-with-descriptions">
+                        <li>
+                            <h4>应用指引（建）：</h4>
+                            <p>为企业提供**建立健全**内部控制的具体指导，涵盖了企业各项业务活动，是企业搭建内控体系的主体性文件。</p>
+                        </li>
+                        <li>
+                            <h4>评价指引（评）：</h4>
+                            <p>为企业管理层对本企业内部控制**有效性进行自我评价**提供指导，明确了评价内容、程序和报告要求。</p>
+                        </li>
+                        <li>
+                            <h4>审计指引（审）：</h4>
+                            <p>为注册会计师执行内部控制**审计业务提供执业准则**，确保外部鉴证工作的规范性和有效性。</p>
+                        </li>
+                    </ul>
+                    
                 </div>
             </div>
-            <div class="tips">
-                <h4>💡 投资规则</h4>
-                <p><strong>股债百分位规则：</strong>25%以下必须卖，75%以上大胆买</p>
-                <p><strong>AH股溢价警戒线：</strong>128% - 超过此值需关注投资风险</p>
-            </div>
-        </div>
 
-        <!-- 价值投资部分 -->
-        <div id="value-section" class="section hidden">
-            <h2>💰 价值投资平台</h2>
-            <div class="value-investment">
-                <h3>智慧投资 创造价值</h3>
-                <p>深入研究，理性决策，长期持有，复利增长</p>
-                <div class="value-features">
-                    <div class="value-feature">
-                        <h4>📈 市场分析</h4>
-                        <p>实时市场数据和趋势分析</p>
-                    </div>
-                    <div class="value-feature">
-                        <h4>📋 基本面分析</h4>
-                        <p>公司财务和经营状况评估</p>
-                    </div>
-                    <div class="value-feature">
-                        <h4>💰 估值分析</h4>
-                        <p>多种估值模型和指标</p>
-                    </div>
-                    <div class="value-feature">
-                        <h4>📁 投资组合</h4>
-                        <p>资产配置和风险管理</p>
-                    </div>
-                    <div class="value-feature">
-                        <h4>📚 学习资源</h4>
-                        <p>投资知识和技能培训</p>
-                    </div>
+            <div class="sub-module">
+                <h3 onclick="toggleSubContent(this)">如何实操 (以附件1原材料采购为例)</h3>
+                <div class="sub-content">
+                    <p>根据附件1的格式和举例，列示原材料采购流程中的关键控制要素，确保实现经营效率和资产保全目标。</p>
+                    <table class="control-table">
+                        <thead>
+                            <tr>
+                                <th>控制目标编号</th>
+                                <th>控制目标</th>
+                                <th>关键控制措施</th>
+                                <th>对应风险描述 (举例)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>14.5-CT1</td>
+                                <td>确保采购价格合理</td>
+                                <td>**14.5-CA1**：原材料采购应进行询价比价，确定合格的供应商。</td>
+                                <td>原材料采购价格不合理，导致资金使用风险。</td>
+                            </tr>
+                            <tr>
+                                <td>14.5-CT2</td>
+                                <td>确保采购的原材料符合生产需求</td>
+                                <td>**14.5-CA2**：原材料选择必须按照使用部门的实际要求和规定挑选合格的原材料。</td>
+                                <td>原材料选择不当，导致无法生产或产品质量缺陷。</td>
+                            </tr>
+                            <tr>
+                                <td>14.5-CT6</td>
+                                <td>确保采购经过适当授权审批</td>
+                                <td>**14.5-CA9**：采购合同应经过总经理审批，重大采购合同需经过董事会批准。</td>
+                                <td>未经授权的采购行为，造成资产损失或负债。</td>
+                            </tr>
+                             <tr>
+                                <td>14.5-CT9</td>
+                                <td>确保预付款得到适当审批</td>
+                                <td>**14.5-CA16**：预付款必须经过相关授权部门（财务部、总经理）审批后方可支付。</td>
+                                <td>预付款未经过审批，影响公司资金安全。</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p style="margin-top: 15px; color: #999;">*注：上述控制目标和措施均摘自附件1《内部控制手册-14.5 原材料采购》。</p>
                 </div>
             </div>
         </div>
 
-        <!-- SOFR分析部分 -->
-        <div id="sofr-section" class="section hidden">
-            <h2>💵 SOFR分析工具</h2>
-            <div class="sofr-form">
-                <div class="input-group">
-                    <label for="sofr">SOFR（担保隔夜融资利率，%）：</label>
-                    <input type="number" id="sofr" step="0.01" placeholder="例如：4.28">
-                </div>
-                <div class="input-group">
-                    <label for="fed-rate">联邦有效利率（%）：</label>
-                    <input type="number" id="fed-rate" step="0.01" placeholder="例如：4.33">
-                </div>
-            </div>
-            <button class="analyze-btn" onclick="analyze()">分析</button>
-            <div class="result" id="result"></div>
-            <div class="tips">
-                <h4>🔗 相关链接</h4>
-                <p><a href="https://www.newyorkfed.org/markets/reference-rates/sofr" target="_blank">查看 SOFR 最新数据</a></p>
-                <p><a href="https://www.federalreserve.gov/releases/h15/" target="_blank">查看联邦基金有效利率（EFFR）</a></p>
-            </div>
-        </div>
-
-        <!-- 美联储SEP部分 -->
-        <div id="sep-section" class="section hidden">
-            <h2>🏦 美联储经济预测摘要 (SEP)</h2>
-            <div class="sep-grid">
-                <a href="https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm" target="_blank" class="sep-card">
-                    <div class="fed-logo">FED</div>
-                    <h3>📅 FOMC会议日历</h3>
-                    <p>美联储公开市场委员会会议安排</p>
-                </a>
-                <a href="https://www.federalreserve.gov/monetarypolicy/fomc_historical.htm" target="_blank" class="sep-card">
-                    <h3>📊 历史SEP数据</h3>
-                    <p>历次经济预测摘要数据查询</p>
-                </a>
-                <a href="https://www.federalreserve.gov/monetarypolicy/fomc_default.htm" target="_blank" class="sep-card">
-                    <h3>📈 货币政策声明</h3>
-                    <p>最新货币政策决策和声明</p>
-                </a>
-            </div>
-            <div class="tips">
-                <h4>💡 SEP说明</h4>
-                <p><strong>SEP（Summary of Economic Projections）：</strong>美联储每季度发布的经济预测摘要，包含GDP、通胀、失业率等关键经济指标的预测。</p>
-                <p><strong>发布频率：</strong>每年3月、6月、9月、12月的FOMC会议后发布</p>
-            </div>
-        </div>
-
-        <!-- 豆豆三部曲部分 -->
-        <div id="books-section" class="section hidden">
-            <h2>📚 豆豆三部曲经典语录</h2>
-            
-            <div class="book-section">
-                <h3>1. 《背叛》——人性与选择</h3>
-                <div class="quote">
-                    "人从根本上只面对两个问题：一是生存，得活下来；二是得回答生命价值的问题，让心有个安住。"
-                </div>
-                <div class="quote">
-                    "背叛不是一种选择，而是一种必然。当你无法承受现实的重量时，背叛就发生了。"
-                </div>
-                <div class="tips">
-                    <h4>可实操的建议：</h4>
-                    <ul>
-                        <li><strong>认清自我：</strong>在做选择时，先问自己内心的真实需求</li>
-                        <li><strong>接受现实：</strong>学会接受不完美的世界和自己</li>
+        <div class="module-section" id="risk-management">
+            <h2>风险模块：全面风险管理体系</h2>
+            <div class="sub-module">
+                <h3 onclick="toggleSubContent(this)">法规依据与基本原则</h3>
+                <div class="sub-content">
+                    <p>企业全面风险管理依据的主要法规是国务院国资委《中央企业全面风险管理指引》。</p>
+                    <h4>基本原则：</h4>
+                    <ul style="margin-left: 20px;">
+                        <li>**全面性及协调性原则：** 风险管理涉及全体员工，涵盖经营管理的各个领域和环节。</li>
+                        <li>**重要性与成本效益原则：** 关注重点业务领域和高风险事项，以适当成本实现有效控制。</li>
+                        <li>**谨慎性原则：** 以风险管理为导向，对重要业务领域严格以制度和程序作为运行的根本法则。</li>
+                        <li>**管业务必须管风险原则：** 集团各部门承担业务或职能领域范围内的风险管理职责。</li>
                     </ul>
                 </div>
             </div>
 
-            <div class="book-section">
-                <h3>2. 《遥远的救世主》——商业与哲学</h3>
-                <div class="quote">
-                    "神即道，道法自然，如来。"
+            <div class="sub-module">
+                <h3 onclick="toggleSubContent(this)">风险分类与流程 (根据附件2)</h3>
+                <div class="sub-content">
+                    <p>根据附件2（全面风险管理暂行办法）的结构，对风险进行分类和流程说明：</p>
+                    <h4>一级风险分类：</h4>
+                    <p>集团风险划分为五类一级风险：</p>
+                    <ol style="margin-left: 20px;">
+                        <li>**战略风险：** 战略定位、选择或执行不到位影响战略目标实现。</li>
+                        <li>**市场风险：** 价格、汇率、利率等市场变化影响经营目标实现。</li>
+                        <li>**财务风险：** 会计核算、资产管理、成本控制不当影响财务报告和信用评级。</li>
+                        <li>**运营风险：** 研发、采购、销售等价值链运营决策不当影响经营目标。</li>
+                        <li>**法律风险：** 未执行国家法律法规和政策规定影响合规性目标。</li>
+                    </ol>
+                    
+                    <h4>风险管理基本流程：</h4>
+                    <p>风险识别 → 风险评估 → 风险策略 → 风险应对 → 风险预警及监控 → 风险报告与监督评价。</p>
                 </div>
-                <div class="quote">
-                    "透视社会依次有三个层面：技术、制度和文化。小到一个人，大到一个国家、一个民族，任何一种命运归根到底都是那种文化属性的产物。"
-                </div>
-                <div class="tips">
-                    <h4>可实操的建议：</h4>
-                    <ul>
-                        <li><strong>理解规律：</strong>在商业中，遵循"天道"和规律，顺势而为</li>
-                        <li><strong>文化属性：</strong>分析问题时要看到背后的文化属性</li>
+            </div>
+        </div>
+
+        <div class="module-section" id="internal-audit-module">
+            <h2>内审模块：法规与腐败案例警示</h2>
+            <div class="sub-module">
+                <h3 onclick="toggleSubContent(this)">内审法律法规依据</h3>
+                <div class="sub-content">
+                    <ul class="link-list">
+                        <li>
+                            《中华人民共和国审计法》<br>
+                            <a href="https://sj.hit.edu.cn/2022/0228/c5841a269115/page.htm" target="_blank">《中华人民共和国审计法》 (官方链接)</a>
+                        </li>
+                        <li>
+                            《内部审计基本准则》<br>
+                            <a href="https://www.audit.gov.cn/n8/n28/c10737065/content.html" target="_blank">审计署法规司相关文件（参考链接）</a>
+                        </li>
                     </ul>
                 </div>
             </div>
 
-            <div class="book-section">
-                <h3>3. 《天幕红尘》——社会与个人</h3>
-                <div class="quote">
-                    "见路不走，即见因果。见相非相，即见如来。"
-                </div>
-                <div class="quote">
-                    "人最难做到的是实事求是，妄念、贪念、杂念一大堆，就算想实事求是，你也不知道怎样实事求是。"
-                </div>
-                <div class="tips">
-                    <h4>可实操的建议：</h4>
-                    <ul>
-                        <li><strong>实事求是：</strong>在做决策时，摒弃妄念和偏见，从实际出发</li>
-                        <li><strong>见路不走：</strong>不要盲目跟随别人的路，找到适合自己的路径</li>
+            <div class="sub-module">
+                <h3 onclick="toggleSubContent(this)">发现的腐败真实案例警示</h3>
+                <div class="sub-content">
+                    <p>以下案例摘自最高检、证监会联合发布的证券违法犯罪典型案例，旨在警示内部控制缺失导致的重大财务欺诈及腐败行为：</p>
+                    <ul class="case-list">
+                        <li>
+                            <h4>案例一：欣某股份有限公司欺诈发行股票、违规披露重要信息案</h4>
+                            <p>
+                                **基本案情：** 该公司实际控制人与财务总监为达到上市目的，通过外部借款、伪造银行单据等方式，**虚构应收款项收回情况，粉饰财务数据**。上市后仍沿用前述手段，披露虚假的年度报告和半年度报告。
+                            </p>
+                            <p>
+                                **内控警示：** 财务部门缺乏独立性，关键岗位人员串通舞弊，缺乏有效的资金活动和信息披露内部控制。
+                            </p>
+                            <p>
+                                **案例链接：** <a href="https://www.spp.gov.cn/xwfbh/dxal/202011/t20201106_484214.shtml" target="_blank">最高检、证监会联合发布证券违法犯罪典型案例 (官方链接)</a>
+                            </li>
+                        </li>
                     </ul>
                 </div>
             </div>
         </div>
+
+        <footer>
+            <p>&copy; 2024 企业治理与内部控制学习资料</p>
+        </footer>
     </div>
 
     <script>
-        // 全局变量
-        let currentUser = '';
-        let tasks = JSON.parse(localStorage.getItem('tasks')) || {};
-        let currentDate = new Date().toISOString().split('T')[0];
-        let searchHistory = JSON.parse(localStorage.getItem('searchHistory')) || [];
+        // 新增折叠功能
+        function toggleSubContent(element) {
+            const content = element.nextElementSibling;
+            const allContents = document.querySelectorAll('.sub-content');
+            const allHeaders = document.querySelectorAll('.sub-module h3');
 
-        // 显示/隐藏部分
-        function showSection(sectionName) {
-            // 隐藏所有部分
-            document.querySelectorAll('.section').forEach(section => {
-                section.classList.add('hidden');
-            });
-            
-            // 移除所有按钮的active类
-            document.querySelectorAll('.nav button').forEach(btn => {
-                btn.classList.remove('active');
-            });
-            
-            // 显示选中的部分
-            document.getElementById(sectionName + '-section').classList.remove('hidden');
-            
-            // 添加active类到当前按钮
-            event.target.classList.add('active');
-        }
-
-        // 时间管理功能
-        function login() {
-            const username = document.getElementById('usernameInput').value.trim();
-            if (username) {
-                currentUser = username;
-                document.getElementById('taskManager').style.display = 'block';
-                document.querySelector('.login').style.display = 'none';
-                loadTasks();
-            }
-        }
-
-        function addTask() {
-            const taskText = document.getElementById('taskInput').value.trim();
-            const difficulty = document.getElementById('difficultyInput').value;
-            
-            if (taskText) {
-                if (!tasks[currentDate]) {
-                    tasks[currentDate] = [];
-                }
-                
-                const task = {
-                    id: Date.now(),
-                    text: taskText,
-                    difficulty: difficulty,
-                    completed: false,
-                    starred: false
-                };
-                
-                tasks[currentDate].push(task);
-                saveTasks();
-                loadTasks();
-                document.getElementById('taskInput').value = '';
-            }
-        }
-
-        function toggleTask(taskId) {
-            const dateTasks = tasks[currentDate] || [];
-            const task = dateTasks.find(t => t.id === taskId);
-            if (task) {
-                task.completed = !task.completed;
-                saveTasks();
-                loadTasks();
-            }
-        }
-
-        function toggleStar(taskId) {
-            const dateTasks = tasks[currentDate] || [];
-            const task = dateTasks.find(t => t.id === taskId);
-            if (task) {
-                task.starred = !task.starred;
-                saveTasks();
-                loadTasks();
-            }
-        }
-
-        function deleteTask(taskId) {
-            const dateTasks = tasks[currentDate] || [];
-            tasks[currentDate] = dateTasks.filter(t => t.id !== taskId);
-            saveTasks();
-            loadTasks();
-        }
-
-        function filterTasks(filter) {
-            loadTasks(filter);
-        }
-
-        function loadTasks(filter = 'all') {
-            const taskLists = document.getElementById('taskLists');
-            const dateTasks = tasks[currentDate] || [];
-            
-            let filteredTasks = dateTasks;
-            if (filter === 'starred') {
-                filteredTasks = dateTasks.filter(t => t.starred);
-            } else if (filter === 'uncompleted') {
-                filteredTasks = dateTasks.filter(t => !t.completed);
-            }
-            
-            taskLists.innerHTML = `
-                <h3>${currentDate} 的任务</h3>
-                <ul class="task-list">
-                    ${filteredTasks.map(task => `
-                        <li class="task-item ${task.completed ? 'completed' : ''}">
-                            <div>
-                                <input type="checkbox" class="checkbox" ${task.completed ? 'checked' : ''} 
-                                       onclick="toggleTask(${task.id})">
-                                <span class="star" onclick="toggleStar(${task.id})">
-                                    ${task.starred ? '⭐' : '☆'}
-                                </span>
-                                <span>${task.text}</span>
-                                <span class="difficulty">[${getDifficultyText(task.difficulty)}]</span>
-                            </div>
-                            <button onclick="deleteTask(${task.id})">删除</button>
-                        </li>
-                    `).join('')}
-                </ul>
-            `;
-        }
-
-        function getDifficultyText(difficulty) {
-            const texts = { easy: '简单', medium: '中等', hard: '困难' };
-            return texts[difficulty] || difficulty;
-        }
-
-        function saveTasks() {
-            localStorage.setItem('tasks', JSON.stringify(tasks));
-        }
-
-        // SOFR分析功能
-        function analyze() {
-            const sofr = parseFloat(document.getElementById('sofr').value);
-            const fedRate = parseFloat(document.getElementById('fed-rate').value);
-            
-            if (isNaN(sofr) || isNaN(fedRate)) {
-                document.getElementById('result').innerHTML = '<p style="color: red;">请输入有效的数值</p>';
-                return;
-            }
-            
-            const difference = fedRate - sofr;
-            const riskClass = getRiskClass(difference);
-            const riskMessage = getRiskMessage(difference);
-            
-            const result = `
-                <h3>分析结果</h3>
-                <p><strong>SOFR：</strong>${sofr}%</p>
-                <p><strong>联邦有效利率：</strong>${fedRate}%</p>
-                <p><strong>差值：</strong>${difference.toFixed(2)}%</p>
-                <p><strong>风险提示：</strong>
-                    <span class="risk-indicator ${riskClass}"></span>
-                    ${riskMessage}
-                </p>
-            `;
-            
-            document.getElementById('result').innerHTML = result;
-            
-            // 保存到历史记录
-            const entry = {
-                time: new Date().toLocaleString(),
-                sofr: sofr,
-                fedRate: fedRate,
-                difference: difference
-            };
-            
-            searchHistory.unshift(entry);
-            if (searchHistory.length > 10) {
-                searchHistory = searchHistory.slice(0, 10);
-            }
-            
-            localStorage.setItem('searchHistory', JSON.stringify(searchHistory));
-        }
-
-        function getRiskClass(difference) {
-            if (difference > 0.17) return 'risk-high';
-            if (difference > 0.07) return 'risk-medium';
-            return 'risk-low';
-        }
-
-        function getRiskMessage(difference) {
-            if (difference > 0.17) {
-                return '高风险 - 市场流动性紧张，需要密切关注';
-            } else if (difference > 0.07) {
-                return '中等风险 - 市场存在一定压力';
+            if (content.style.display === 'block') {
+                content.style.display = 'none';
+                element.classList.remove('active');
             } else {
-                return '低风险 - 市场运行正常';
+                // 关闭其他所有内容
+                allContents.forEach(c => c.style.display = 'none');
+                allHeaders.forEach(h => h.classList.remove('active'));
+
+                // 打开当前内容
+                content.style.display = 'block';
+                element.classList.add('active');
             }
         }
-
-        // 页面加载时初始化
-        document.addEventListener('DOMContentLoaded', function() {
-            // 检查是否有保存的用户名
-            const savedUser = localStorage.getItem('currentUser');
-            if (savedUser) {
-                currentUser = savedUser;
-                document.getElementById('usernameInput').value = savedUser;
-                login();
-            }
-        });
     </script>
 </body>
-</html> 
+</html>
